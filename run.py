@@ -1,4 +1,3 @@
-from __future__ import print_function
 from keras.preprocessing.image import load_img, save_img, img_to_array
 import numpy as np
 from scipy.optimize import fmin_l_bfgs_b
@@ -7,6 +6,8 @@ import argparse
 
 from keras.applications import vgg19
 from keras import backend as K
+import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
 
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
 parser.add_argument('base_image_path', metavar='base', type=str,
